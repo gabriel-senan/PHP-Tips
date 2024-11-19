@@ -16,3 +16,11 @@ require __DIR__ . "/../vendor/autoload.php";
 // $query = $conn->query("SELECT * FROM actor");
 
 // var_dump($query->fetchAll());
+
+use Source\Models\User;
+$user = new User();
+$list = $user->find()->fetch(all: true);
+
+foreach ($list as $userItem) {
+    var_dump($userItem->first_name);
+}
